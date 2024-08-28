@@ -11,8 +11,8 @@ def check_json(data):
     try:
         parsed_data = json.loads(data)
         return parsed_data
-    except ValueError:
-        print('Invalid JSON')
+    except json.JSONDecodeError as e:
+        print(f'Invalid JSON: {e}')
         return None
 
 
